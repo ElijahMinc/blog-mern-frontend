@@ -14,7 +14,7 @@ import { AppDispatch } from '@/redux/configureStore';
 export const Chat = () => {
 
   const dispatch = useDispatch<AppDispatch>()
-  const { messages, isJoined } = useSelector(selectChat)
+  const { messages, isJoined, userName } = useSelector(selectChat)
   const messagesRef = useRef<MessageInterface[]>([]);
 
 
