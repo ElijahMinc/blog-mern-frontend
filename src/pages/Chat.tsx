@@ -37,7 +37,7 @@ export const Chat = () => {
   useEffect(() => {
     socket.on('ROOM:LEAVE', (userLeave) => {
       console.log('disconnect')
-      dispatch(setJoined(false))
+      userLeave.userName === userName && dispatch(setJoined(false))
       dispatch(setToast({title: `User ${userLeave.userName} leave`, status: 'info'}))
     })
   }, [])
